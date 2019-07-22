@@ -1,13 +1,39 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#othello-board {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  background-image: url('./img/othello_board.png');
+  background-size: cover;
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+}
+#othello-board button {
+  margin: 5%;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-duration: .33s;
+  opacity: 0;
+  border: none;
+}
+#othello-board button.black {
+  background-image: url('./img/black_piece.png');
+  opacity: 1;
+}
+#othello-board button.white {
+  background-image: url('./img/white_piece.png');
+  opacity: 1;
+}
+#othello-board button.possible {
+  background-image: none;
+}
+#othello-board button.possible.black {
+  box-shadow: inset 0 0 15px black;
+}
+#othello-board button.possible.white {
+  box-shadow: inset 0 0 15px white;
 }
